@@ -21,8 +21,6 @@ jobs:
       run: dotnet publish Extensions/Cosmos/Cosmos.DataTransfer.CosmosExtension/Cosmos.DataTransfer.CosmosExtension.csproj --configuration Release --no-build -p:PublishProfile=PublishToExtensionsFolder
     - name: Publish extensions (Json)
       run: dotnet publish Extensions/Json/Cosmos.DataTransfer.JsonExtension/Cosmos.DataTransfer.JsonExtension.csproj --configuration Release --no-build -p:PublishProfile=PublishToExtensionsFolder
-    - name: Publish extensions (Mongo)
-      run: dotnet publish Extensions/Mongo/Cosmos.DataTransfer.MongoExtension/Cosmos.DataTransfer.MongoExtension.csproj --configuration Release --no-build -p:PublishProfile=PublishToExtensionsFolder
     - name: Publish extensions (Mongo Legacy)
       run: dotnet publish Extensions/Mongo/Cosmos.DataTransfer.MongoLegacyExtension/Cosmos.DataTransfer.MongoLegacyExtension.csproj --configuration Release --no-build -p:PublishProfile=PublishToExtensionsFolder
     - name: Publish extensions (SQL Server)

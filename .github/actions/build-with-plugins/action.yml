@@ -76,21 +76,6 @@ runs:
         -p:PublishReadyToRun=false \
         -p:PublishTrimmed=false \
         -p:Version=${{ inputs.build-version }}
-    - name: Build Mongo Extension
-      shell: bash
-      run: |
-        dotnet publish \
-        Extensions/Mongo/Cosmos.DataTransfer.MongoExtension/Cosmos.DataTransfer.MongoExtension.csproj \
-        --configuration Release \
-        --output ${{ inputs.runtime }}/Extensions \
-        --self-contained false \
-        --runtime ${{ inputs.runtime }} \
-        -p:PublishSingleFile=false \
-        -p:DebugType=embedded \
-        -p:EnableCompressionInSingleFile=true \
-        -p:PublishReadyToRun=false \
-        -p:PublishTrimmed=false \
-        -p:Version=${{ inputs.build-version }}
     - name: Build Mongo Legacy Extension
       shell: bash
       run: |

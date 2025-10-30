@@ -72,20 +72,6 @@ RUN dotnet publish \
     -p:PublishTrimmed=false \
     -p:Version=${BUILD_VERSION}
 
-# Build Mongo Extension
-RUN dotnet publish \
-    Extensions/Mongo/Cosmos.DataTransfer.MongoExtension/Cosmos.DataTransfer.MongoExtension.csproj \
-    --configuration Release \
-    --output /app/${RUNTIME}/Extensions \
-    --self-contained false \
-    --runtime ${RUNTIME} \
-    -p:PublishSingleFile=false \
-    -p:DebugType=embedded \
-    -p:EnableCompressionInSingleFile=true \
-    -p:PublishReadyToRun=false \
-    -p:PublishTrimmed=false \
-    -p:Version=${BUILD_VERSION}
-
 # Build Mongo Legacy Extension
 RUN dotnet publish \
     Extensions/Mongo/Cosmos.DataTransfer.MongoLegacyExtension/Cosmos.DataTransfer.MongoLegacyExtension.csproj \
